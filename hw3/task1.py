@@ -23,11 +23,11 @@
 #     >>> f()
 #     ? 2
 
-from functools import wraps # импорт спец декоратора позволяющего сохранить атрибуты входной функции
+from functools import wraps  # Import of a special decorator that allows you to save the attributes of the input function
 
 
 def cache(times=2):
-    def cache_decorator(func): # определяем какую функцию мы будем декорировать
+    def cache_decorator(func):  # Define which function we will decorate
         memorized = {}  # Dictionary for storing results of the executed function
         count_dic = {}  # Dictionary for storing the amount of times cached value was returned
 
@@ -36,13 +36,13 @@ def cache(times=2):
             if args in count_dic and count_dic[args] < times:
                 count_dic[args] += 1
                 print(' cached value: ')
-                return memorized[args] # возвращение кэшированных значений
+                return memorized[args]  # Returning cached values
             else:
-                if args in count_dic and count_dic[args] >= times: # если ф-я вызываается в 1 раз или больше установленного таймс
-                    memorized.pop(args) # очистка словаря
+                if args in count_dic and count_dic[args] >= times:  # If the function is called 1 time or more than the specified number of times
+                    memorized.pop(args)  # Clearing the dictionary
                 count_dic[args] = 0
                 initial_func_result = func(*args)
-                memorized[args] = initial_func_result # новое кэширование аргументов передаваемой функции
+                memorized[args] = initial_func_result  # New caching of passed function arguments
                 print(' executed value: ')
                 return initial_func_result
         return wrapper
@@ -50,5 +50,5 @@ def cache(times=2):
 
 
 @cache(times=2)
-def pow_func(a, b):
+def pow_func(a, b):  # Cacheable function
     return (a ** b) ** 2
