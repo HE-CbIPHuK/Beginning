@@ -17,7 +17,7 @@ Definition of done:
 from typing import List, Generator
 
 
-def fizzbuzz(n: int) -> Generator: # объявляем генератор, результатом которой будет элемент последовательности физзбазз
+def fizzbuzz(n: int) -> Generator:  # We declare a generator, the result of which will be an element of the sequence fizzbuzz
     """
     >>> list(fizzbuzz(5))
     ['1', '2', 'fizz', '4', 'buzz']
@@ -25,7 +25,7 @@ def fizzbuzz(n: int) -> Generator: # объявляем генератор, ре
     ['1', '2', 'fizz', '4', 'buzz', 'fizz', '7', '8', 'fizz', 'buzz', '11', 'fizz', '13', '14', 'fizzbuzz']
     """
     for i in range(1, n + 1):
-        yield 'fizz'*(not i % 3) + 'buzz'*(not i % 5) or f'{i}' # елд выступает в качестве ретёрна для каждого элемента
+        yield 'fizz'*(not i % 3) + 'buzz'*(not i % 5) or f'{i}'  # Yield acts as a "return" for each element
 
 
 import doctest

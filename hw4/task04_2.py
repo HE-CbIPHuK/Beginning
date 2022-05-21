@@ -39,7 +39,7 @@ def fizzbuzz(n: int) -> List[str]:
        ['1', '2', 'fizz', '4', 'buzz', 'fizz', '7', '8', 'fizz', 'buzz', '11', 'fizz', '13', '14', 'fizzbuzz']
        >>> fizzbuzz(0)
        []
-       """ # прописываем ожидания после проверки доктеста
+       """  # Write expectations after checking the doctest
     numbers = []
     for i in range(1, n+1):
         if i % 15 == 0:
@@ -54,5 +54,5 @@ def fizzbuzz(n: int) -> List[str]:
     pass
 
 
-import doctest # импортируем доктест
-doctest.testmod() # запуск доктеста
+import doctest  # Import doctest
+doctest.testmod()  # Run doctest

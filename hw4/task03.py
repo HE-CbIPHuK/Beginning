@@ -29,7 +29,7 @@ import sys
 
 
 def my_precious_logger(text: str):
-    if text.lower().startswith('error'): # если текст начинается с "ошибки"
-        print(text, file=sys.stderr) # значение для аргумента в функции принт это файл =сис.стдерр
+    if text.lower().startswith('error'):  # If the text starts with "error"
+        print(text, file=sys.stderr)  # The value for the argument in 'print' function is "file=sys.stderr"
     else:
-        print(text)  # default value for 'file' argument in 'print' function is file=sys.stdout.
+        print(text)  # The value for the argument in 'print' function is "file=sys.stdout"

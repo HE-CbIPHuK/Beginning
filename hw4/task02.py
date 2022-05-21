@@ -25,14 +25,14 @@ You will learn:
 **** https://docs.python.org/3/tutorial/errors.html#raising-exceptions
 """
 
-from os import path # импорт класса для работы с файловой системой
+from os import path  # Class import for working with the file system
 
 
-def read_magic_number(location: str) -> bool: # объявляем функцию, где параметром является путь к файлу
-    if path.exists(location): # проверка существования файла
-        with open(location, 'r') as f: #  с помощью контекст менеджера открываем файл для чтения
+def read_magic_number(location: str) -> bool:  # Declare a function, where the parameter is the path to the file
+    if path.exists(location):  # File existence check
+        with open(location, 'r') as f:  # Using the context manager open the file for reading
             try:
                 fst_line = float(f.readline())
-                return 1. <= fst_line < 3. # точки для неокругления
+                return 1. <= fst_line < 3.  # (points for non-rounding)
             except Exception:
                 raise ValueError
